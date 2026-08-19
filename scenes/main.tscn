@@ -82,6 +82,11 @@ text = "6"
 layout_mode = 2
 alignment = 1
 
+[node name="Button7" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer3" unique_id=445464618]
+custom_minimum_size = Vector2(70, 50)
+layout_mode = 2
+text = "7"
+
 [node name="Button8" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer3" unique_id=1736144714]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
@@ -91,11 +96,6 @@ text = "8"
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 text = "9"
-
-[node name="Button7" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer3" unique_id=445464618]
-custom_minimum_size = Vector2(70, 50)
-layout_mode = 2
-text = "7"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="keyboard/keyboard_numbers" unique_id=1114320792]
 layout_mode = 2
