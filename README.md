@@ -8,7 +8,7 @@
 - O projeto ainda está em estágio incial de desenvolvimento.
 - Muitas funcionalidades ainda estão incompletas ou não foram implementadas.
 - Muitas coisas como a interface e o próprio código podem mudar ao longo do desenvolvimento.
-- Vários bugs podem ser encontrados no momento.
+- Alguns bugs podem ser encontrados nessa fase do desenvolvimento.
 
 ## Foto da interface principal atualmente
 ![Interface da urna eletrônica](assets/foto_atual_do_projeto.png)
