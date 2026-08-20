@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://caa6bm4a3tgs3" path="res://sprites/urna_bg.png" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://bltgqnt3isf71" path="res://sprites/urna_keyboard_bg.png" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://cknic64tuvww8" path="res://sprites/urna_screen_bg.png" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://2o5ocllqhmku" path="res://scripts/keyboard.gd" id="4_jyhfs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyhfs"]
 bg_color = Color(1, 1, 1, 1)
@@ -35,73 +36,74 @@ offset_top = 290.0
 offset_right = 1250.0
 offset_bottom = 610.0
 alignment = 2
+script = ExtResource("4_jyhfs")
 
 [node name="keyboard_numbers" type="VBoxContainer" parent="keyboard" unique_id=1978937449]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="keyboard/keyboard_numbers" unique_id=701844147]
+[node name="row1" type="HBoxContainer" parent="keyboard/keyboard_numbers" unique_id=701844147]
 layout_mode = 2
 alignment = 1
 
-[node name="Button1" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer" unique_id=1836308834]
+[node name="btn1" type="Button" parent="keyboard/keyboard_numbers/row1" unique_id=1836308834]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 text = "1"
 
-[node name="Button2" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer" unique_id=483258794]
+[node name="btn2" type="Button" parent="keyboard/keyboard_numbers/row1" unique_id=483258794]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 text = "2"
 
-[node name="Button3" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer" unique_id=1237883124]
+[node name="btn3" type="Button" parent="keyboard/keyboard_numbers/row1" unique_id=1237883124]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 text = "3"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="keyboard/keyboard_numbers" unique_id=101050545]
+[node name="row2" type="HBoxContainer" parent="keyboard/keyboard_numbers" unique_id=101050545]
 layout_mode = 2
 alignment = 1
 
-[node name="Button4" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer2" unique_id=596112901]
+[node name="btn4" type="Button" parent="keyboard/keyboard_numbers/row2" unique_id=596112901]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 text = "4"
 
-[node name="Button5" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer2" unique_id=1497593085]
+[node name="btn5" type="Button" parent="keyboard/keyboard_numbers/row2" unique_id=1497593085]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 text = "5"
 
-[node name="Button6" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer2" unique_id=1382758375]
+[node name="btn6" type="Button" parent="keyboard/keyboard_numbers/row2" unique_id=1382758375]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 text = "6"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="keyboard/keyboard_numbers" unique_id=299395911]
+[node name="row3" type="HBoxContainer" parent="keyboard/keyboard_numbers" unique_id=299395911]
 layout_mode = 2
 alignment = 1
 
-[node name="Button7" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer3" unique_id=445464618]
+[node name="btn7" type="Button" parent="keyboard/keyboard_numbers/row3" unique_id=445464618]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 text = "7"
 
-[node name="Button8" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer3" unique_id=1736144714]
+[node name="btn8" type="Button" parent="keyboard/keyboard_numbers/row3" unique_id=1736144714]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 text = "8"
 
-[node name="Button9" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer3" unique_id=529282775]
+[node name="btn9" type="Button" parent="keyboard/keyboard_numbers/row3" unique_id=529282775]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 text = "9"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="keyboard/keyboard_numbers" unique_id=1114320792]
+[node name="row4" type="HBoxContainer" parent="keyboard/keyboard_numbers" unique_id=1114320792]
 layout_mode = 2
 alignment = 1
 
-[node name="Button0" type="Button" parent="keyboard/keyboard_numbers/HBoxContainer4" unique_id=1326815326]
+[node name="btn0" type="Button" parent="keyboard/keyboard_numbers/row4" unique_id=1326815326]
 custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 text = "0
@@ -134,3 +136,17 @@ size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_tefeu")
 text = "CONFIRMA"
+
+[connection signal="pressed" from="keyboard/keyboard_numbers/row1/btn1" to="keyboard" method="_on_keyboard_number_pressed" binds= ["btn1"]]
+[connection signal="pressed" from="keyboard/keyboard_numbers/row1/btn2" to="keyboard" method="_on_keyboard_number_pressed" binds= ["btn2"]]
+[connection signal="pressed" from="keyboard/keyboard_numbers/row1/btn3" to="keyboard" method="_on_keyboard_number_pressed" binds= ["btn3"]]
+[connection signal="pressed" from="keyboard/keyboard_numbers/row2/btn4" to="keyboard" method="_on_keyboard_number_pressed" binds= ["btn4"]]
+[connection signal="pressed" from="keyboard/keyboard_numbers/row2/btn5" to="keyboard" method="_on_keyboard_number_pressed" binds= ["btn5"]]
+[connection signal="pressed" from="keyboard/keyboard_numbers/row2/btn6" to="keyboard" method="_on_keyboard_number_pressed" binds= ["btn6"]]
+[connection signal="pressed" from="keyboard/keyboard_numbers/row3/btn7" to="keyboard" method="_on_keyboard_number_pressed" binds= ["btn7"]]
+[connection signal="pressed" from="keyboard/keyboard_numbers/row3/btn8" to="keyboard" method="_on_keyboard_number_pressed" binds= ["btn8"]]
+[connection signal="pressed" from="keyboard/keyboard_numbers/row3/btn9" to="keyboard" method="_on_keyboard_number_pressed" binds= ["btn9"]]
+[connection signal="pressed" from="keyboard/keyboard_numbers/row4/btn0" to="keyboard" method="_on_keyboard_number_pressed" binds= ["btn0"]]
+[connection signal="pressed" from="keyboard/keybord_actions/null_btn" to="keyboard" method="_on_keyboard_keyaction_pressed" binds= ["null"]]
+[connection signal="pressed" from="keyboard/keybord_actions/revise_btn" to="keyboard" method="_on_keyboard_keyaction_pressed" binds= ["revise"]]
+[connection signal="pressed" from="keyboard/keybord_actions/confirm_btn" to="keyboard" method="_on_keyboard_keyaction_pressed" binds= ["confirm"]]
